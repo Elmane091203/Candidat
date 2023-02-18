@@ -1,18 +1,18 @@
 <div class="d-flex justify-content-lg-between mb-0">
-    <div class="sticky-top w-25 h-100 bg-secondary" style="height: 790px;">
+    <div class="sticky-top w-25 h-25 bg-secondary">
         <div class="pt-2 pl-2 pr-2 pb-3 bg-dark mb-0 text-center h3 h-25">
             <a class="nav-link active  text-light" aria-current="page" href="/">Tableau de bord</a>
         </div>
         <div class="d-flex flex-column h-75  mb-0 align-items-left pb-4">
-            <a href="" class="p-3 nav-link mt-5 ml-2 mr-2 h-25 text-info"><h5> Nombre de candidats/formation </h5></a>
-            <a href="" class="p-3 nav-link mt-5 ml-2 mr-2 h-25 text-warning"><h5> Nombre de formations/referentiel </h5></a>
-            <a href="" class="p-3 nav-link mt-5 ml-2 mr-2 h-25 text-info"><h5> Repartition Totale des candidats/sexe </h5></a>
-            <a href="" class="p-3 nav-link mt-5 ml-2 mr-2 h-25 text-warning"><h5> Repartition des formations/types </h5></a>
-            <a href="" class="p-3 nav-link mt-5 ml-2 mr-2 h-25 text-info"><h5> Graphe Representant la tranche d'âge </h5></a>
-            <a href="" class="p-3 nav-link mt-5 ml-2 mr-2 h-25 text-warning"><h5> Statistiques des formations </h5></a>
+            <a href="" class=" m-2 btn btn-light text-info">Nombre de candidats/formation</a>
+            <a href="" class=" m-2 btn btn-light text-warning">Nombre de formations/referentiel</a>
+            <a href="" class=" m-2 btn btn-light text-info">Repartition Totale des candidats/sexe</a>
+            <a href="" class=" m-2 btn btn-light text-warning">Repartition des formations/types</a>
+            <a href="" class=" m-2 btn btn-light text-info">Graphe Representant la tranche d'âge</a>
+            <a href="" class=" m-2 btn btn-light text-warning">Statistiques des formations</a>
         </div>
     </div>
-    <div class=" bg-light w-75 mb-0" style="height: 800px;">
+    <div class="w-75 m-0 p-0">
         <ul class="nav bg-secondary sticky-top p-2 justify-content-lg-between">
             <li class="nav-item text-white">
                 <a class="nav-link active  text-white" aria-current="page" href="/">Acceuil</a>
@@ -26,6 +26,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{{ route('referentiels.index')}}">Referentiels</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('types.index')}}">Types</a>
                 </li>
             </ul>
         </ul>
@@ -47,8 +50,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($candidats as $candidat)
-                            <tr></tr>
+                            @foreach($candidats as $c)
+                            <tr>
+                                <td>{{$c->id}}</td>
+                                <td>{{$c->nom}}</td>
+                                <td>{{$c->prenom}}</td>
+                                <td>{{$c->email}}</td>
+                                <td>{{$c->age}}</td>
+                                <td>{{$c->niveau_etude}}</td>
+                                <td>{{$c->sexe}}</td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
@@ -89,7 +100,7 @@
                 </div>
             </div>
             @endif
-            @yield('content')
         </div>
+        @yield('content')
     </div>
 </div>

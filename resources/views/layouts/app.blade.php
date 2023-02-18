@@ -6,7 +6,7 @@
     <title>Gestion de Candidature</title>
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 </head>
-<body class="bg-secondary pb-0">
+<body class="">
     @include('partials.barreDeNavigation') ;
 </body>
 </html>
