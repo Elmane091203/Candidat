@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Candidat;
 use App\Models\Formation;
+use App\Models\Referentiel;
 use App\Models\Type;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,7 @@ class ChartController extends Controller
     }
     public function formationr()
     {
-        $data = Formation::all();
+        $data = Referentiel::all();
         return view('dashboard.sformation', compact('data'));
     }
     public function statistique()

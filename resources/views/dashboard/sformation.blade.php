@@ -9,7 +9,7 @@
         data: {
             labels: [<?php
                         foreach ($data as $item) {
-                            echo "'".$item->nom."'" . ',';
+                            echo "'".$item->libelle."'" . ',';
                         }
                         ?>],
             datasets: [{
@@ -23,7 +23,7 @@
                 borderWidth: 1,
                 data: [<?php
                         foreach ($data as $item) {
-                            echo count($item->referentiel). ',';
+                            echo count($item->formation). ',';
                         }
                         ?>]
             }]

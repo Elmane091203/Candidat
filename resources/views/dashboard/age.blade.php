@@ -5,7 +5,7 @@
 <script>
     var ctx = document.getElementById('myChart').getContext('2d');
     var chart = new Chart(ctx, {
-        type: 'pie',
+        type: 'doughnut',
         data: {
             labels: ['18ans à 25ans','25ans à 30ans','30ans à 35ans'],
             datasets: [{
