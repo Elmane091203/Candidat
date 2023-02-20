@@ -4,12 +4,12 @@
             <a class="nav-link active  text-light" aria-current="page" href="/">Tableau de bord</a>
         </div>
         <div class="d-flex flex-column h-75  mb-0 align-items-left pb-4">
-            <a href="" class=" m-2 btn btn-light text-info">Nombre de candidats/formation</a>
-            <a href="" class=" m-2 btn btn-light text-warning">Nombre de formations/referentiel</a>
-            <a href="" class=" m-2 btn btn-light text-info">Repartition Totale des candidats/sexe</a>
-            <a href="" class=" m-2 btn btn-light text-warning">Repartition des formations/types</a>
-            <a href="" class=" m-2 btn btn-light text-info">Graphe Representant la tranche d'âge</a>
-            <a href="" class=" m-2 btn btn-light text-warning">Statistiques des formations</a>
+            <a href="{{ route('candidats.formations')}}" class=" m-2 btn btn-light text-info">Nombre de candidats/formation</a>
+            <a href="{{ route('formations.referentiels')}}" class=" m-2 btn btn-light text-warning">Nombre de formations/referentiel</a>
+            <a href="{{ route('candidats.sexe')}}" class=" m-2 btn btn-light text-info">Repartition Totale des candidats/sexe</a>
+            <a href="{{ route('formations.types')}}" class=" m-2 btn btn-light text-warning">Repartition des formations/types</a>
+            <a href="{{ route('candidats.age')}}" class=" m-2 btn btn-light text-info">Graphe Representant la tranche d'âge</a>
+            <a href="{{ route('formations.stats')}}" class=" m-2 btn btn-light text-warning">Statistiques des formations</a>
         </div>
     </div>
     <div class="w-75 m-0 p-0">
@@ -29,6 +29,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{{ route('types.index')}}">Types</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('relations.index')}}">Relation</a>
                 </li>
             </ul>
         </ul>

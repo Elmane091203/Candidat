@@ -25,14 +25,14 @@ class TypeController extends Controller
         $type = Type::find($input['id']);
         $type->update($input);
         toastr()->info('Type modifié avec success! ');
-        return view('type.index',['types'=>Type::all()]);
+        return redirect('/types')->with(['types'=>Type::all()]);
     }
-    public function delete(Request $request)
+    public function destroy(Request $request)
     {
         $id = $request->all();
-        $type = Type::find($id);
+        $type = Type::find($id['id']);
         $type->delete();
         toastr()->warning('Type modifié avec success! ');
-        return view('type.index',['types'=>Type::all()]);
+        return redirect('/types')->with(['types'=>Type::all()]);
     }
 }

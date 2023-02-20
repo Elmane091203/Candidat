@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Formation_Referentiel extends Model
 {
     use HasFactory;
+    protected $table = 'formation_referentiels';
     public $timestamps = false;
     protected $fillable=[
         'formation_id',

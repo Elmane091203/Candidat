@@ -15,10 +15,10 @@ class Candidat_Formation extends Model
     ];
     public function Candidats()
     {
-        return $this->hasMany(Candidat::class);
+        return $this->belongsToMany(Candidat::class);
     }
     public function Formations()
     {
-        return $this->hasMany(Formation::class);
+        return $this->belongsToMany(Formation::class);
     }
 }

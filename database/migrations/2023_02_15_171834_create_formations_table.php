@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nom');
             $table->integer('duree');
             $table->text('description');
-            $table->boolean('is_started');
+            $table->boolean('is_started')->default(0);
             $table->dateTime('date_debut');
         });
     }

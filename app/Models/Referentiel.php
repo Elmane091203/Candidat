@@ -21,6 +21,6 @@ class Referentiel extends Model
     }
     public function Formation()
     {
-        return $this->belongsTo(Formation_Referentiel::class);
+        return $this->belongsToMany(Formation::class,'formation_referentiels');
     }
 }

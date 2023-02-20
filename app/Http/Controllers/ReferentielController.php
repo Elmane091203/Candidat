@@ -21,4 +21,26 @@ class ReferentielController extends Controller
         return view('referentiels.index',['referentiels'=>Referentiel::all(),'types'=>Type::all()] );
 
     }
+    public function update(Request $request)
+    {
+        $input = $request->all();
+        $r =Referentiel::find($input['id']);
+        $r->libelle = $input['libelle'];
+        $r->validite = $input['validite'];
+        $r->horaire = $input['horaire'];
+        $r->type_id = $input['type_id'];
+        $r->update();
+        toastr()->info('Referentiel modifié avec success! ');
+        return redirect('/referentiels')->with(['referentiels'=>Referentiel::all(),'types'=>Type::all()] );
+        
+    }
+    public function destroy(Request $request)
+    {
+        $input = $request->all();
+        $r =Referentiel::find($input['id'] );
+        $r->delete();
+        toastr()->warning('Referentiel spprimé avec success! ');
+        return redirect('/referentiels')->with(['referentiels'=>Referentiel::all(),'types'=>Type::all()] );
+
+    }
 }

@@ -43,7 +43,7 @@
         <div class="card" id="modif" hidden style="max-height: 500px; overflow: scroll;">
             <div class="h4 text-center bg-secondary p-2 text-white">Formulaire de modification de Candidat</div>
             <div class="card-body">
-                <form action="{{route('candidats.update',['candidat'=>$c])}}" class="align-middle" method="post">
+                <form action="{{route('candidats.update',['candidat'=>50])}}" class="align-middle" method="post">
                     @csrf
                     @method('PUT')
                     <input type="text" name="id" hidden id="idC">
@@ -143,7 +143,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{route('candidats.destroy',['candidat'=>$c])}}" method="post">
+            <form action="{{route('candidats.destroy',['candidat'=>50])}}" method="post">
                 @csrf
                 @method('delete')
                 <div class="modal-body">

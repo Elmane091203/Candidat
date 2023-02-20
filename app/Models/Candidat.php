@@ -17,8 +17,8 @@ class Candidat extends Model
         'niveau_etude',
         'sexe'
     ];
-    public function Referentiel()
+    public function Formations()
     {
-        return $this->belongsTo(Candidat_Formation::class);
+        return $this->belongsToMany(Formation::class,'candidat__formations');
     }
 }

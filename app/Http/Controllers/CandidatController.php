@@ -38,7 +38,7 @@ class CandidatController extends Controller
         $input = $request->all();
         $c = Candidat::find($input['id']);
         $c->delete();
-        toastr()->error('Candidat(e) supprimé(e) avec success! ');
+        toastr()->warning('Candidat(e) supprimé(e) avec success! ');
         return redirect('/candidats')->with(['candidats' => Candidat::all()]);
     }
     

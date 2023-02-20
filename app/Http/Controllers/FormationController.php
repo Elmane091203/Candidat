@@ -28,9 +28,26 @@ class FormationController extends Controller
         toastr()->success('Formation ajoutée avec success! ');
         return view('formations.index',['formations'=>Formation::all()]);
     }
+    public function update(Request $request)
+    {
+        $input = $request->all();
+        $f =Formation::find($input['id']);
+        $f->update($input);
+        toastr()->info('Formation modifiée avec success! ');
+        return redirect('/formations')->with(['formations'=>Formation::all()]);
+    }
+    public function destroy(Request $request)
+    {
+        $input = $request->all();
+        $f =Formation::find($input['id']);
+        $f->delete();
+        toastr()->warning('Formation supprimée avec success! ');
+        return redirect('/formations')->with(['formations'=>Formation::all()]);
+    }
 
     public function index()
     {
         return view('formations.index',['formations'=>Formation::all()]);
     }
+    
 }
