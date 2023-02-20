@@ -51,7 +51,7 @@
                     <input type="text" name="id" hidden id="idR">
                     <div class="">
                         <label for="" class="col-xd-2 h5 pt-1">Libelle</label>
-                        <input name="libelle" id="libelle" required type="text" class=" col-xd-2 form-control">
+                        <input name="libelle" id="libelle" pattern="[\p{L}\s]+" title="Ce champ ne peut contenir que des  lettres et espaces" required type="text" class=" col-xd-2 form-control">
                     </div>
                     <div class="mt-3">
                         <label for="" class="col-xd-2 h5 pt-1">Validite</label>
@@ -81,14 +81,14 @@
             </div>
         </div>
     </div>
-    <div class="card mt-4 col-md-8 offset-md-2">
+    <div id="ajout" class="card mt-4 col-md-8 offset-md-2">
         <div class="h4 text-center bg-primary p-2 text-white">Formulaire d'ajout de Referentiel</div>
         <div class="card-body">
             <form action="{{route('referentiels.store')}}" class="align-middle" method="post">
                 @csrf
                 <div class="mt-3">
                     <label for="" class="col-xd-2 h5 pt-1">Libelle</label>
-                    <input name="libelle" required type="text" class=" col-xd-2 form-control">
+                    <input name="libelle"  pattern="[\p{L}\s]+" title="Ce champ ne peut contenir que des  lettres et espaces" required type="text" class=" col-xd-2 form-control">
                 </div>
                 <div class="mt-3">
                     <label for="" class="col-xd-2 h5 pt-1">Validite</label>

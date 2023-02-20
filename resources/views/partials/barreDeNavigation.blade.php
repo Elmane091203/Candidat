@@ -39,7 +39,7 @@
             @if(isset($contenu))
             <div class="container mt-4">
                 <div class="card-head p-2 mb-2 bg-dark text-light h4 text-center">Listes de tous les candidats</div>
-                <div class="card p-2">
+                <div class="card p-2" style="height: 300px;overflow-y: scroll;">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -68,7 +68,7 @@
                     </table>
                 </div>
                 <div class="card-head p-2 mt-4 mb-2 bg-dark text-light h4 text-center">Listes de toutes les formations</div>
-                <div class="card p-2">
+                <div class="card p-2" style="height: 300px;overflow-y: scroll;">
                     <table class="table table-bordered">
                         <thead>
                             <th>ID</th>
@@ -79,14 +79,21 @@
                             <th>Date debut</th>
                         </thead>
                         <tbody>
-                            @foreach($formations as $formation)
-                            <tr></tr>
+                            @foreach($formations as $f)
+                            <tr>
+                                <td>{{$f->id}}</td>
+                                <td>{{$f->nom}}</td>
+                                <td>{{$f->duree}}</td>
+                                <td>{{$f->description}}</td>
+                                <td>{{($f->is_started==1)?"En cours":"En attente"}}</td>
+                                <td>{{$f->date_debut}}</td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </div>
                 <div class="card-head p-2 mt-4 mb-2 bg-dark text-light h4 text-center">Listes de tous les referentiels</div>
-                <div class="card p-2">
+                <div class="card p-2" style="height: 300px;overflow-y: scroll;">
                     <table class="table table-bordered">
                         <thead>
                             <th>ID</th>
@@ -96,7 +103,19 @@
                         </thead>
                         <tbody>
                             @foreach($referentiels as $referentiel)
-                            <tr></tr>
+                            <tr>
+                                <td>{{$referentiel->id}}</td>
+                                <td>{{$referentiel->libelle}}</td>
+                                <td>{{$referentiel->validite==1?"Valide":"Non Valide"}}</td>
+                                <td>{{$referentiel->horaire}}</td>
+                                <td>@foreach($types as $t)
+                                    @if($t->id==$referentiel->type_id)
+                                    {{$t->libelle}}
+                                    @break
+                                    @endif
+                                    @endforeach
+                                </td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Candidat;
 use App\Models\Formation;
 use App\Models\Referentiel;
+use App\Models\Type;
 use DateTime;
 use DateTimeZone;
 use Illuminate\Http\Request;
@@ -19,7 +20,8 @@ class FormationController extends Controller
         $candidats = Candidat::all();
         $formations = Formation::all();
         $referentiels = Referentiel::all();
-        return view("layouts.app", ['contenu' => $this->contenue, 'candidats' => $candidats, 'formations' => $formations, 'referentiels' => $referentiels]);
+        $types = Type::all();
+        return view("layouts.app", ['contenu' => $this->contenue, 'candidats' => $candidats, 'formations' => $formations, 'referentiels' => $referentiels, 'types' => $types]);
     }
     public function store(Request $request)
     {

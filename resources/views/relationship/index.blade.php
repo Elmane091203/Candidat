@@ -56,7 +56,7 @@
     <div class="container p-2">
         <div class="card p-2 mb-2">
             <div class="card-head p-2 bg-dark text-light h4 text-center">Listes des candidats avec formations</div>
-            <div class="card p-2" style="max-height: 400px; overflow-y: scroll;">
+            <div class="card p-2" style="max-height: 300px; overflow-y: scroll;">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -91,7 +91,7 @@
         </div>
         <div class="card p-2 mb-2">
             <div class="card-head p-2 bg-dark text-light h4 text-center">Listes des formations avec referentiels</div>
-            <div class="card p-2" style="max-height: 400px; overflow-y: scroll;">
+            <div class="card p-2" style="max-height: 300px; overflow-y: scroll;">
                 <table class="table table-bordered">
                     <thead>
                         <tr>

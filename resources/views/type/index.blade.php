@@ -8,7 +8,7 @@
                 @csrf
                 <div class="mt-3">
                     <label for="" class="col-md-4 h5 pt-1">Libelle</label>
-                    <input name="libelle" type="text" required class="form-control col-md-8">
+                    <input name="libelle"  pattern="[\p{L}\s]+" title="Ce champ ne peut contenir que des  lettres et espaces" type="text" required class="form-control col-md-8">
                 </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-success btn-lg">Enregistrer</button>
@@ -28,7 +28,7 @@
                     <input type="text" name="id" hidden value="" id="id">
                     <div class="mt-3">
                         <label for="" class="col-md-4 h6 pt-1">Libelle</label>
-                        <input id="libelle" name="libelle" type="text" value="" onchange="" required class="form-control col-md-8">
+                        <input id="libelle" pattern="[\p{L}\s]+" title="Ce champ ne peut contenir que des  lettres et espaces" name="libelle" type="text" value="" onchange="" required class="form-control col-md-8">
                     </div>
                     <div class="text-center">
                         <button type="submit" id="modif" disabled class="btn btn-primary mt-2 btn-sm">Modifier</button>

@@ -49,15 +49,15 @@
                     <input type="text" name="id" hidden id="idC">
                     <div class="row mt-3">
                         <label for="" class="text-left pt-1">Nom</label>
-                        <input name="nom" id="nomC" required type="text" class="form-control col-md-8">
+                        <input name="nom" pattern="[\p{L}\s]+" title="Ce champ ne peut contenir que des  lettres et espaces" id="nomC" required type="text" class="form-control col-md-8">
                     </div>
                     <div class="row mt-3">
                         <label for="" class="text-left pt-1">Prenom</label>
-                        <input name="prenom" id="prenomC" required type="text" class="form-control col-md-8">
+                        <input name="prenom" pattern="[\p{L}\s]+" title="Ce champ ne peut contenir que des  lettres et espaces" id="prenomC" required type="text" class="form-control col-md-8">
                     </div>
                     <div class="row mt-3">
                         <label for="" class="text-left pt-1">Email</label>
-                        <input name="email" id="emailC" required type="email" class="form-control col-md-8">
+                        <input name="email" id="emailC" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"    title="Saisir votre adresse email  " type="email" class="form-control col-md-8">
                     </div>
                     <div class="row mt-3">
                         <label for="" class="text-left pt-1">Age</label>
@@ -95,15 +95,15 @@
                 @csrf
                 <div class="row mt-3">
                     <label for="" class="col-md-4 h5 text-left pt-1">Nom</label>
-                    <input name="nom" required type="text" class="form-control col-md-8">
+                    <input name="nom" pattern="[\p{L}\s]+" title="Ce champ ne peut contenir que des  lettres et espaces" required type="text" class="form-control col-md-8">
                 </div>
                 <div class="row mt-3">
                     <label for="" class="col-md-4 h5 text-left pt-1">Prenom</label>
-                    <input name="prenom" required type="text" class="form-control col-md-8">
+                    <input name="prenom" pattern="[\p{L}\s]+" title="Ce champ ne peut contenir que des  lettres et espaces" required type="text" class="form-control col-md-8">
                 </div>
                 <div class="row mt-3">
                     <label for="" class="col-md-4 h5 text-left pt-1">Email</label>
-                    <input name="email" required type="email" class="form-control col-md-8">
+                    <input name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"    title="Saisissez votre adresse email" required type="email" class="form-control col-md-8">
                 </div>
                 <div class="row mt-3">
                     <label for="" class="col-md-4 h5 text-left pt-1">Age</label>
